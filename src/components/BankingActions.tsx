@@ -1,16 +1,6 @@
 import React, { useState } from "react";
 import type { Account } from "../services/BankingService";
 import { validateAmount } from "../utils/Validator";
-import {
-  FaMoneyBillWave,
-  FaArrowRight,
-  FaExchangeAlt,
-  FaArrowUp,
-  FaArrowDown,
-  FaInfoCircle,
-  FaShieldAlt,
-  FaHistory
-} from "react-icons/fa";
 import { FiArrowUpRight, FiArrowDownRight, FiRepeat } from 'react-icons/fi';
 
 type Props = {
@@ -30,12 +20,6 @@ const BankingActions: React.FC<Props> = ({
   const [selectedAccount, setSelectedAccount] = useState<string>("");
   const [amount, setAmount] = useState<string>("");
   const [error, setError] = useState<string>("");
-
-  // Transfer
-  const [fromId, setFromId] = useState("");
-  const [toId, setToId] = useState("");
-  const [transferAmount, setTransferAmount] = useState("");
-  const [transferError, setTransferError] = useState<string | null>(null);
 
   const handleTransaction = (type: 'deposit' | 'withdraw') => {
     setError('');
@@ -62,19 +46,6 @@ const BankingActions: React.FC<Props> = ({
     if (type === 'deposit') onDeposit(selectedAccount, numAmount);
     else onWithdraw(selectedAccount, numAmount);
     setAmount("");
-  };
-
-  const handleTransfer = (e: React.FormEvent) => {
-    e.preventDefault();
-    const amt = Number(transferAmount);
-    const amtError = validateAmount(amt);
-    if (!fromId || !toId) return setTransferError("Select both accounts.");
-    if (fromId === toId) return setTransferError("Cannot transfer to same account.");
-    if (amtError) return setTransferError(amtError);
-
-    setTransferError(null);
-    onTransfer(fromId, toId, amt);
-    setTransferAmount("");
   };
 
   return (

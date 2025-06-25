@@ -46,7 +46,7 @@ function Home() {
 
   const handleDeposit = (id: string, amount: number) => handleTransaction(id, amount, 'deposit');
   const handleWithdraw = (id: string, amount: number) => handleTransaction(id, amount, 'withdraw');
-  const handleTransfer = (fromId: string, toId: string, amount: number) => {
+  const handleTransfer = () => {
     // Implement transfer logic here if needed
   };
   return (

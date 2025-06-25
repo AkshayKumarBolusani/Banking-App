@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import { validateName, validateAmount } from "../utils/Validator";
-import {
-  FaPlus,
-  FaUser,
-  FaDollarSign,
-  FaInfoCircle,
-  FaShieldAlt
-} from "react-icons/fa";
+import { FaPlus, FaInfoCircle, FaShieldAlt } from "react-icons/fa";
 import { FiPlus } from 'react-icons/fi';
 
 interface Account {
