@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { validateName, validateAmount } from "../utils/Validator";
 import { FaPlus, FaInfoCircle, FaShieldAlt } from "react-icons/fa";
 import { FiPlus } from 'react-icons/fi';
 

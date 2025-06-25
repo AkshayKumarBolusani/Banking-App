@@ -45,9 +45,7 @@ function Home() {
 
   const handleDeposit = (id: string, amount: number) => handleTransaction(id, amount, 'deposit');
   const handleWithdraw = (id: string, amount: number) => handleTransaction(id, amount, 'withdraw');
-  const handleTransfer = () => {
-    // Implement transfer logic here if needed
-  };
+
   return (
     <div className="home-root">
       {/* Account Overview Section */}
