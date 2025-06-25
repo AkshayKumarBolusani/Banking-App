@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { FiDollarSign, FiArrowUpRight, FiArrowDownRight, FiCreditCard } from 'react-icons/fi';
 import AccountList from '../components/AccountList';
 import AccountForm from '../components/AccountForm';
 import BankingActions from '../components/BankingActions';
@@ -122,7 +121,7 @@ function Home() {
             <div className="section-header">
               <h2 className="section-title">Quick Actions</h2>
             </div>
-            <BankingActions accounts={accounts} onDeposit={handleDeposit} onWithdraw={handleWithdraw} onTransfer={handleTransfer} />
+            <BankingActions accounts={accounts} onDeposit={handleDeposit} onWithdraw={handleWithdraw} />
           </div>
           <div className="add-account-section">
             <div className="section-header">

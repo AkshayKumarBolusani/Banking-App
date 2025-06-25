@@ -1,20 +1,17 @@
 import React, { useState } from "react";
 import type { Account } from "../services/BankingService";
-import { validateAmount } from "../utils/Validator";
 import { FiArrowUpRight, FiArrowDownRight, FiRepeat } from 'react-icons/fi';
 
 type Props = {
   accounts: Account[];
   onDeposit: (id: string, amount: number) => void;
   onWithdraw: (id: string, amount: number) => void;
-  onTransfer: (fromId: string, toId: string, amount: number) => void;
 };
 
 const BankingActions: React.FC<Props> = ({
   accounts,
   onDeposit,
   onWithdraw,
-  onTransfer,
 }) => {
   // Deposit/Withdraw
   const [selectedAccount, setSelectedAccount] = useState<string>("");
